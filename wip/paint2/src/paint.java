@@ -1,3 +1,7 @@
+/**
+ * http://www.usaco.org/index.php?page=viewproblem2&cpid=224
+ */
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
