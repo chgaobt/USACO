@@ -1,27 +1,23 @@
-import javax.print.attribute.standard.PrintQuality;
+/**
+ * http://www.usaco.org/index.php?page=viewproblem2&cpid=376
+ */
+
 import java.io.*;
 import java.util.ArrayList;
-import java.util.TreeSet;
 
 public class skidesign {
     public static void main (String []args) throws IOException {
+        //read and store input data
         BufferedReader f = new BufferedReader(new FileReader("skidesign.in"));
         int numHills = Integer.parseInt(f.readLine());
         int[] hillSize = new int[numHills];
         ArrayList<Integer> stat = new ArrayList<>();
 
-        int g = 0;
-        for (int i = 0; i < numHills; i++) {
+        int g = 0; // value of the largest hill
+        for (int i = 0; i < numHills; i++) { //store hill size values in array
             hillSize[i] = Integer.parseInt(f.readLine());
             if (hillSize[i] > g) {
                 g = hillSize[i];
-            }
-        }
-        int max = 0;
-        for (int i =0; i < numHills; i++) {
-            int z = hillSize[i];
-            if (z>max) {
-                max=z;
             }
         }
         int count = 0;
@@ -31,7 +27,7 @@ public class skidesign {
             int num = 0;
             for (int j = 0; j < numHills; j++) {
                 int x = (hillSize[i] + 17);
-                if (x < max) {
+                if (x < g) {
                     int y = hillSize[j];
                     if (y <= x && y >= (x - 17)) {
                         num = num + 1;
@@ -49,7 +45,7 @@ public class skidesign {
             }
         }
         int cost = 900000000;
-        for (int k = 0; k < g; k++) {
+        for (int k = 0; k < g; k++) { // try all possible situations; the values in between the hill size are possible too
             start = k;
             int price = 0;
             for (int i = 0; i < numHills; i++) {
@@ -65,7 +61,7 @@ public class skidesign {
                     }
                 }
             }
-            if(price < cost) {
+            if(price < cost) { // the goal is to find the lowest cost
                 cost = price;
             }
         }

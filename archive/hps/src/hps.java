@@ -38,7 +38,7 @@ public class hps {
                 paper = scissor;
                 scissor = z; // repeat the process so that the input data represent different actions in the game
             }
-            rock = (rock+1) % 3; 
+            rock = (rock+1) % 3;
             paper = (rock+1) % 3;
             scissor = (scissor+1) % 3;
         }
