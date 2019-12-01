@@ -44,7 +44,7 @@ public class square {
         hB = Math.max(hB,x2);
 
         int square = 0;
-        // math calculations 
+        // math calculations
         w = wB - w;
         h = hB - h;
 
