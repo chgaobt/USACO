@@ -1,3 +1,7 @@
+/**
+ * http://www.usaco.org/index.php?page=viewproblem2&cpid=259
+ */
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
@@ -33,7 +37,7 @@ public class cowrace {
             }
         }
 
-        //Stimulate race
+        //Stimulate race by tracking both cows time segment by time segment 
         int LeadingCow = 3;
         int change = 0;
         int BCurrent = 0;
