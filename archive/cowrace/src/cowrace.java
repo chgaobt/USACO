@@ -37,7 +37,7 @@ public class cowrace {
             }
         }
 
-        //Stimulate race by tracking both cows time segment by time segment 
+        //Stimulate race by tracking both cows time segment by time segment
         int LeadingCow = 3;
         int change = 0;
         int BCurrent = 0;

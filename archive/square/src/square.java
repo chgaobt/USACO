@@ -1,14 +1,12 @@
-/*
-ID: chloe1
-LANG: JAVA
-TASK: square
+/**
+ *http://www.usaco.org/index.php?page=viewproblem2&cpid=663
  */
 
 import java.io.*;
 import java.util.StringTokenizer;
 
 public class square {
-    public static void main (String []args) throws IOException {
+    public static void main (String []args) throws IOException {// read and store input value
         BufferedReader f = new BufferedReader(new FileReader("square.in"));
         StringTokenizer st = new StringTokenizer(f.readLine());
         int rec1w1 = Integer.parseInt(st.nextToken());
@@ -24,7 +22,7 @@ public class square {
 
         int w = 0;
         int h = 0;
-
+        // unify variables so that the smallest value is always the same variable and vice versa
         w = Math.min(rec1w1, rec1w2);
         int x = Math.min(rec2w1, rec2w2);
         w = Math.min(w,x);
@@ -46,7 +44,7 @@ public class square {
         hB = Math.max(hB,x2);
 
         int square = 0;
-
+        // math calculations 
         w = wB - w;
         h = hB - h;
 
