@@ -1,3 +1,8 @@
+/**
+ * http://www.usaco.org/index.php?page=viewproblem2&cpid=893
+ */
+
+
 import java.io.*;
 import java.util.HashMap;
 import java.util.StringTokenizer;
