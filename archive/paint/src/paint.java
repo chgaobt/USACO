@@ -1,7 +1,5 @@
-/*
-ID: chloe1
-LANG: JAVA
-TASK: paint
+/**
+ *http://www.usaco.org/index.php?page=viewproblem2&cpid=567
  */
 
 import java.io.*;
@@ -9,11 +7,9 @@ import java.util.StringTokenizer;
 import java.util.Vector;
 
 public class paint {
-    public static void main (String []args) throws IOException {
+    public static void main (String []args) throws IOException { // read and store input data
         BufferedReader f = new BufferedReader(new FileReader("paint.in"));
-
         Vector<Interval> fence = new Vector<>();
-
         for ( int i = 0; i<2; i++) {
             StringTokenizer st = new StringTokenizer(f.readLine());
             int b = Integer.parseInt(st.nextToken());
@@ -25,7 +21,7 @@ public class paint {
         int milkTime = 0;
         int vectorSize = fence.size();
 
-        milkTime = paintDistance(fence,vectorSize,milkTime);
+        milkTime = paintDistance(fence,vectorSize,milkTime); // total painted distance value
 
         PrintWriter out = new PrintWriter(new FileWriter("paint.out"));
         out.println(milkTime);
@@ -33,9 +29,8 @@ public class paint {
 
     }
 
-    static Vector<Interval> updateFence (Vector<Interval> list, Interval another) {
+    static Vector<Interval> updateFence (Vector<Interval> list, Interval another) { // decide if the two given intervals overlap or not
         Vector<Interval> newList = new Vector<>();
-
         if (list.isEmpty()) {
             newList.add(another);
         }
@@ -59,14 +54,11 @@ public class paint {
         if (vectorSize == 1) {
             milkTime = fence.get(0).end - fence.get(0).begin;
         }
-
         else {
             milkTime = fence.get(0).end - fence.get(0).begin + fence.get(1).end - fence.get(1).begin;
         }
-
         return milkTime;
     }
-
 }
 
 class Interval {
@@ -78,7 +70,7 @@ class Interval {
         end = e;
     }
 
-    public boolean merge (Interval another) {
+    public boolean merge (Interval another) { // if two points overlap the overlapped distance will not be double counted
         if ((another.begin <= this.end) && (another.end >= this.begin)) {
 
             begin = Math.min(begin, another.begin);
