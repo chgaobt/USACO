@@ -1,13 +1,17 @@
+/**
+ * http://www.usaco.org/index.php?page=viewproblem2&cpid=688
+ */
+
 import java.io.*;
 import java.util.StringTokenizer;
 
 public class hps {
     static public void main (String []args) throws IOException {
+        // read and store input data
         BufferedReader f = new BufferedReader(new FileReader("hps.in"));
         int rounds = Integer.parseInt(f.readLine());
         int[] cow1 = new int[rounds];
         int[] cow2 = new int[rounds];
-
         for (int i = 0; i < rounds; i++) {
             StringTokenizer st = new StringTokenizer(f.readLine());
             cow1[i] = Integer.parseInt(st.nextToken());
@@ -24,7 +28,7 @@ public class hps {
                 for (int j = 0; j < rounds; j++) {
                     int x = cow1[j];
                     int y = cow2[j];
-                    win = win + calculatePlay(rock,paper,scissor,x,y);
+                    win = win + calculatePlay(rock,paper,scissor,x,y); //Stimulate the actual game; create conditionals that act like the rules in rock, paper, sisors where rock beats sissors, sissors beats paper, and paper beats rock
 
                 }
                 if (win > wins) {
@@ -32,9 +36,9 @@ public class hps {
                 }
                 int z = paper;
                 paper = scissor;
-                scissor = z;
+                scissor = z; // repeat the process so that the input data represent different actions in the game
             }
-            rock = (rock+1) % 3;
+            rock = (rock+1) % 3; 
             paper = (rock+1) % 3;
             scissor = (scissor+1) % 3;
         }
