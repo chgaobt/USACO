@@ -15,29 +15,35 @@ public class relay {
             message[i] = Integer.parseInt(f.readLine());
         }
         int nonLooping = cows;
-        for(int i = 0; i< cows; i++) {
-            Set<Integer> track = new HashSet<>(); // used to record the names of the cows that the message is forwarded too
-            int starting = i+1;
+        
+
+        for(int i = 0; i<cows; i++) {
+            Set<Integer> track = new HashSet<>();
+            boolean notLooping = true;
+            int starting = message[i];
+            track.add(i+1);
+            if(starting == 0) {
+                notLooping = false;
+            }
             track.add(starting);
-            int ori = message[i];
-            if(ori == 0) {
-                continue;
-            }
-            int size = 0;
-            for(int j = 0; j<cows; j++) { // Stimulate the message being passed from cow to cow 
-                int forward = message[ori-1];
-                if(forward == 0) {
-                    size = cows;
-                    break;
+            while (notLooping) {
+                int size = track.size();
+                int next = message[starting-1];
+                track.add(next);
+                int growth = track.size()-size;
+
+                //if the looping detected
+                if(growth == 0) {
+                    nonLooping = nonLooping-1;
+                    notLooping = false;
                 }
-                track.add(ori-1);
-                ori = forward;
-                size = track.size();
-            }
-            if (size<cows) { // the only way for a cow to be nonlooping is if you send a message to it and it will be passed to all the cows
-                nonLooping = nonLooping-1; // if not all the cows receive the message that means there was a loop
+
+                if(next == 0) {
+                    notLooping = false;
+                }
             }
         }
+
         PrintWriter out = new PrintWriter(new FileWriter("relay.out"));
         out.println(nonLooping);
         out.close();
