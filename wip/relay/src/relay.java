@@ -17,21 +17,22 @@ public class relay {
         int nonLooping = cows;
         
 
+        //check with individual cow, starting message
         for(int i = 0; i<cows; i++) {
-            Set<Integer> track = new HashSet<>();
+            Set<Integer> track = new HashSet<>();  //the message path,
             boolean notLooping = true;
-            int starting = message[i];
+            int next = message[i];
             track.add(i+1);
-            if(starting == 0) {
-                notLooping = false;
+            if(next == 0) {
+                notLooping=false;
             }
-            track.add(starting);
             while (notLooping) {
                 int size = track.size();
-                int next = message[starting-1];
                 track.add(next);
+
                 int growth = track.size()-size;
 
+                next = message[next-1];
                 //if the looping detected
                 if(growth == 0) {
                     nonLooping = nonLooping-1;
