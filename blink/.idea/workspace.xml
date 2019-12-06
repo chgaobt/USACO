@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3475cd6f-49dc-46c8-8220-1d7770703c0b" name="Default Changelist" comment="" />
+    <list default="true" id="fc15bc75-af0e-4dee-aaa3-5100f597a9f1" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,15 +15,7 @@
       </list>
     </option>
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
-  </component>
-  <component name="ProjectId" id="1URnfx1och1v8KGlOXZMhgvS1az" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="PropertiesComponent">
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-  </component>
+  <component name="ProjectId" id="1UXevzfHgvW0BWpavd6FAv7mH0A" />
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -37,16 +29,16 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="crossing" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="crossing" />
-      <module name="crossing2" />
+    <configuration name="blink" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="blink" />
+      <module name="blink" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.crossing" />
+        <item itemvalue="Application.blink" />
       </list>
     </recent_temporary>
   </component>
@@ -55,33 +47,20 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3475cd6f-49dc-46c8-8220-1d7770703c0b" name="Default Changelist" comment="" />
-      <created>1575328381636</created>
+      <changelist id="fc15bc75-af0e-4dee-aaa3-5100f597a9f1" name="Default Changelist" comment="" />
+      <created>1575507601963</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1575328381636</updated>
+      <updated>1575507601963</updated>
     </task>
     <servers />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/crossing.java</url>
-          <line>9</line>
+          <url>file://$PROJECT_DIR$/src/blink.java</url>
+          <line>13</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
