@@ -15,18 +15,29 @@ public class relay {
             message[i] = Integer.parseInt(f.readLine());
         }
         int nonLooping = cows;
-        
+        Set<Integer> loopy = new HashSet<>();
 
         //check with individual cow, starting message
         for(int i = 0; i<cows; i++) {
             Set<Integer> track = new HashSet<>();  //the message path,
             boolean notLooping = true;
+
+            if (loopy.contains(i+1)){
+                nonLooping = nonLooping-1;
+                notLooping = false;
+            }
             int next = message[i];
             track.add(i+1);
             if(next == 0) {
                 notLooping=false;
             }
             while (notLooping) {
+
+                if (loopy.contains(next)){
+                    nonLooping = nonLooping-1;
+                    notLooping = false;
+                }
+
                 int size = track.size();
                 track.add(next);
 
@@ -35,6 +46,7 @@ public class relay {
                 next = message[next-1];
                 //if the looping detected
                 if(growth == 0) {
+                    loopy.addAll(track);
                     nonLooping = nonLooping-1;
                     notLooping = false;
                 }
