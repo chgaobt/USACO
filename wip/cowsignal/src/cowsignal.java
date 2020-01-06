@@ -17,22 +17,13 @@ public class cowsignal {
 
         PrintWriter out = new PrintWriter(new FileWriter("cowsignal.out"));
         char[][] newSignal = new char[(length*sizeIncrease)][(width*sizeIncrease)];
-        for(int i = 0; i<length; i++) {
-            for(int j = 0; j<width; j++) {
-                char x = oriSignal[i][j];
-                int rowStart = i * sizeIncrease;
-                for(int k = 0; k<sizeIncrease; k++) {
-                    rowStart = rowStart+k;
-                    int columnStart = j*sizeIncrease;
-                    for(int h = 0; h<sizeIncrease; h++) {
-                        columnStart = columnStart+h;
-                        newSignal[rowStart][columnStart] = x;
-                    }
-                    if( j == width-1) {
-                        out.println(newSignal[rowStart]);
-                    }
-                }
+        for(int i = 0; i< length*sizeIncrease; i++) {
+            for(int j = 0; j<width*sizeIncrease; j++) {
+                newSignal[i][j] = oriSignal[i/sizeIncrease][j/sizeIncrease];
             }
+        }
+        for(int i = 0; i<length*sizeIncrease; i++) {
+            out.println(newSignal[i]);
         }
         out.close();
     }
