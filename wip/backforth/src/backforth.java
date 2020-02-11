@@ -1,84 +1,115 @@
 import java.io.*;
-import java.util.ArrayList;
-import java.util.StringTokenizer;
-import java.util.TreeMap;
+import java.util.*;
 
 public class backforth {
     public static void main (String []args) throws IOException {
         BufferedReader f = new BufferedReader(new FileReader("backforth.in"));
-        int[] barn1 = new int[10];
-        int[] barn2 = new int[10];
+        HashMap<Integer, Integer> barn1 = new HashMap<>();  //bucket
+        HashMap<Integer, Integer> barn2 = new HashMap<>();
+        Set<Integer> b1 = new HashSet<>();
+        Set<Integer> b2 = new HashSet<>();
+        Set<Integer> ori1 = new HashSet<>();
+        Set<Integer> ori2 = new HashSet<>();
         StringTokenizer st = new StringTokenizer(f.readLine());
-        for(int j = 0; j<10; j++) {
-            barn1[j] = Integer.parseInt(st.nextToken());
+        for(int i = 0; i<10; i++) {
+            int x = Integer.parseInt(st.nextToken());
+            if(barn1.get(x) == null) {
+                barn1.put(x,1);
+                b1.add(x);
+                ori1.add(x);
+            }
+            else {
+                int y = barn1.get(x);
+                barn1.put(x,y+1);
+            }
         }
         StringTokenizer st1 = new StringTokenizer(f.readLine());
         for(int i = 0; i<10; i++) {
-            barn2[i] = Integer.parseInt(st1.nextToken());
-        }
-        int total = 0;
-        ArrayList<Integer> first = new ArrayList<>();
-        ArrayList<Integer> second = new ArrayList<>();
-        ridDuplicates(first, barn1);
-        ridDuplicates(second,barn2);
-        ArrayList<Integer> result = new ArrayList<>();
-        for(int i = 0; i<second.size(); i++) {
-            for(int j = 0; j<first.size(); j++) {
-                int x = second.get(i)-first.get(j);
-                result.add(x);
-                result.add(2*x);
+            int x = Integer.parseInt(st1.nextToken());
+            if(barn2.get(x) == null) {
+                barn2.put(x,1);
+                b2.add(x);
+                ori2.add(x);
+            }
+            else {
+                int y = barn2.get(x);
+                barn2.put(x,y+1);
             }
         }
-        ArrayList<Integer> finalized = new ArrayList<>();
-        ridDuplicates2(finalized, result);
-        total = total + finalized.size();
-        for(int i = 0; i<second.size(); i++) {
-            System.out.println(second.get(i));
+        Set<Integer> possible = new HashSet<>();
+
+        for(int bucket1 : b1) {
+            int milk = 1000;
+            int y = barn1.get(bucket1);
+            barn1.put(bucket1,y-1);
+            milk = milk-bucket1;
+            b2.add(bucket1);
+            if(barn2.get(bucket1) == null) {
+                barn2.put(bucket1,1);
+            }
+            else {
+                int g = barn2.get(bucket1);
+                barn2.put(bucket1, g+1);
+            }
+
+            //Reset
+            Set <Integer> b11 = new HashSet<>();
+            b11.addAll(b1);
+            Set <Integer> b21 = new HashSet<>();
+            b21.addAll(b2);
+
+            for(int bucket2 : b21) {
+                milk = milk+bucket2;
+                int a = barn2.get(bucket2);
+                barn2.put(bucket2,a-1);
+                if(barn1.get(bucket2) == null) {
+                    barn1.put(bucket2,1);
+                }
+                else {
+                    int b = barn1.get(bucket2);
+                    barn1.put(bucket2,b+1);
+                }
+                b11.add(bucket2);
+
+                Set <Integer> b12 = new HashSet<>();
+                b12.addAll(b11);
+                Set <Integer> b22 = new HashSet<>();
+                b22.addAll(b21);
+
+                for (int bucket3 : b12) {
+                    if(barn1.get(bucket3) < 1) {
+                        continue;
+                    }
+                    milk = milk - bucket3;
+                    int c = barn1.get(bucket3);
+                    barn1.put(bucket3, c-1);
+                    if(barn2.get(bucket3) == null) {
+                        barn2.put(bucket3,1);
+                    }
+                    else {
+                        int b = barn2.get(bucket3);
+                        barn2.put(bucket3,b+1);
+                    }
+                    b21.add(bucket3);
+
+                    for(int bucket4 : b22) {
+                        if (barn2.get(bucket4) < 1) {
+                            continue;
+                        }
+                        milk = milk + bucket4;
+                        possible.add(milk);
+                    }
+
+                 }
+
+            }
+            b1 = new HashSet<>();
+            b1.addAll(ori1);
+            b2 = new HashSet<>();
+            b2.addAll(ori2);
         }
         PrintWriter out = new PrintWriter(new FileWriter("backforth.out"));
-        out.println(total);
+        out.println(possible.size());
         out.close();
-    }
-
-    static void ridDuplicates (ArrayList<Integer> arrayList, int[] barn) {
-        for(int i = 0; i<10; i++) {
-            boolean duplicate = false;
-            int compare = barn[i];
-            if(arrayList.size() == 0) {
-                arrayList.add(compare);
-            }
-            else{
-                for(int bucket: arrayList) {
-                    if(bucket == compare) {
-                        duplicate = true;
-                        break;
-                    }
-                }
-                if(duplicate == false) {
-                    arrayList.add(compare);
-                }
-            }
-        }
-    }
-
-    static void ridDuplicates2 (ArrayList<Integer> arrayList, ArrayList<Integer> result) {
-        for(int i = 0; i<result.size(); i++) {
-            boolean duplicate = false;
-            int compare = result.get(i);
-            if(arrayList.size() == 0) {
-                arrayList.add(compare);
-            }
-            else{
-                for(int bucket: arrayList) {
-                    if(bucket == compare) {
-                        duplicate = true;
-                        break;
-                    }
-                }
-                if(duplicate == false) {
-                    arrayList.add(compare);
-                }
-            }
-        }
     }
 }

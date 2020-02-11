@@ -23,7 +23,6 @@ public class baseball {
                 }
             }
         }
-
         PrintWriter out = new PrintWriter(new FileWriter("baseball.out"));
         out.println(count);
         out.close();

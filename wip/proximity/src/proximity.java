@@ -19,7 +19,7 @@ public class proximity {
             int cow1 = cowLine[i];
             int x = i + proximity;
             if (x > (cow-1)) {
-                x = x - cow;
+                x = cow-1;  //problem here!
             }
 
             for (int j = i+1; j <= x; j++) {
@@ -31,6 +31,7 @@ public class proximity {
                 if (ID > count) {
                     count = ID;
                 }
+
             }
         }
 
