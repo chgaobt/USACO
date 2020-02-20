@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/balancing.iml" filepath="$PROJECT_DIR$/.idea/balancing.iml" />
+      <module fileurl="file://$PROJECT_DIR$/angry.iml" filepath="$PROJECT_DIR$/angry.iml" />
     </modules>
   </component>
 </project>

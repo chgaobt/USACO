@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="40b31f09-5b13-42a1-804d-97f7e421b0f4" name="Default Changelist" comment="" />
+    <list default="true" id="b8c041f4-bb8c-41ca-b0be-462f837844f7" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,7 +15,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectId" id="1SGSHkz6LxU4Me1RA8KFh0fBiH7" />
+  <component name="ProjectId" id="1XxO9tQenPuhe4gNpW91hX0lkpu" />
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -29,16 +29,16 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="balancing" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="balancing" />
-      <module name="balancing" />
+    <configuration name="cowqueue" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cowqueue" />
+      <module name="cowqueue" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.balancing" />
+        <item itemvalue="Application.cowqueue" />
       </list>
     </recent_temporary>
   </component>
@@ -47,11 +47,11 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="40b31f09-5b13-42a1-804d-97f7e421b0f4" name="Default Changelist" comment="" />
-      <created>1571188353300</created>
+      <changelist id="b8c041f4-bb8c-41ca-b0be-462f837844f7" name="Default Changelist" comment="" />
+      <created>1581984130300</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1571188353300</updated>
+      <updated>1581984130300</updated>
     </task>
     <servers />
   </component>

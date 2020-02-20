@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="35087973-8bc1-4491-a4a2-2983a8dedae2" name="Default Changelist" comment="" />
+    <list default="true" id="3b9ed58b-963a-4277-a469-9c2276fcce75" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,7 +15,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectId" id="1Rtp1diYZGhIuUGTsabecuD8kbM" />
+  <component name="ProjectId" id="1XjUKeCPbZko76igGVcNKRnU3vj" />
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -28,16 +28,30 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="angry" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="angry" />
+      <module name="angry" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.angry" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="35087973-8bc1-4491-a4a2-2983a8dedae2" name="Default Changelist" comment="" />
-      <created>1570496032873</created>
+      <changelist id="3b9ed58b-963a-4277-a469-9c2276fcce75" name="Default Changelist" comment="" />
+      <created>1581558934698</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1570496032873</updated>
+      <updated>1581558934698</updated>
     </task>
     <servers />
   </component>
