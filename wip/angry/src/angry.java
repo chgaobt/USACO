@@ -5,7 +5,9 @@ import java.util.Set;
 
 public class angry {
     public static void main (String []args) throws IOException {
+        String path = new File("angry.in").getAbsolutePath();
         BufferedReader f = new BufferedReader(new FileReader("angry.in"));
+        System.out.println(new File("angry.in").getAbsolutePath());
         int hay = Integer.parseInt(f.readLine());
         int [] loco = new int[hay];
         for(int i = 0; i<hay; i++) {
