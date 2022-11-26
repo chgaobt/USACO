@@ -14,7 +14,7 @@ public class lazy {
             st = new StringTokenizer(f.readLine()); 
             for(int j = 1; j<=n; j++) {
                 int x = Integer.parseInt(st.nextToken()); 
-                prefix[i][j] = prefix[i-1][j]+prefix[i][j-1]-prefix[i-1][j-1]+x; 
+                prefix[i][j] = prefix[i][j-1] + x; 
             }
         }
 
