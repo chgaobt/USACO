@@ -1,0 +1,5 @@
+different methods of reading input 
+1. read from file
+        // BufferedReader f = new BufferedReader(new FileReader("filename")); 
+2. stdin 
+        // BufferedReader f = new BufferedReader(new InputStreamReader(System.in)); 
