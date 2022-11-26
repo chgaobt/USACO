@@ -1,2 +1,2 @@
 kadane's algorithm (finds the largest subarray sum using a greedy method)
-min/max queries (sparse table method)
+segment trees 
