@@ -3,3 +3,7 @@ different methods of reading input
         // BufferedReader f = new BufferedReader(new FileReader("filename")); 
 2. stdin 
         // BufferedReader f = new BufferedReader(new InputStreamReader(System.in)); 
+
+
+running cpp file in c++17 
+g++ -std=c++17 -Wall programName.cpp -o programName.exe 
