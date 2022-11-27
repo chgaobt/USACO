@@ -20,19 +20,27 @@ public class lazy {
 
         PrintWriter out = new PrintWriter(new FileWriter("lazy.out")); 
         int max = 0; 
+        int posi = 0;
+        int posj = 0; 
         for(int i = 1; i<=n; i++) {
             for(int j = 1; j<=n; j++) {
                 int a = Math.max(1, j-k);
                 int A = Math.min(n, j+k); 
-                int sum = prefix[i][A]-prefix[i][a-1];  // origin row
+                int sum = prefix[i][A]-prefix[i][a-1];  // origin row 
+
                 for(int l = 1; l<=k; l++) {  //rows above and below origin row
-                    int b = Math.max(1,i-l); 
-                    int B = Math.min(n, i+l); 
-                    sum += prefix[b][A-l] - prefix[b][a-1+l]; 
-                    sum += prefix[B][A-l] - prefix[B][a-1+l]; 
+                    if(i-l>=1){
+                        sum += prefix[i-l][A-l] - prefix[i-l][a-1+l];
+                    }
+                    if(i+l <=n) {
+                        sum += prefix[i+l][A-l] - prefix[i+l][a-1+l]; 
+                    }
+        
                 }
                 if(sum>max) {
                     max = sum; 
+                    posi = i; 
+                    posj = j; 
                 }
             }
         }
