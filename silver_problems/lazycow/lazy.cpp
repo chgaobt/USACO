@@ -42,8 +42,7 @@ int main() {
     }
 
     fout << max << "\n";
-    cout << max;
-
+    
     return 0; 
 }
 
