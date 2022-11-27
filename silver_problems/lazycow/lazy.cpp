@@ -13,8 +13,6 @@ int main() {
     fin >> n; 
     fin >> k; 
 
-    cout << n;
-    cout <<k;
     
     return 0; 
 }
