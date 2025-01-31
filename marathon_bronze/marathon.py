@@ -19,7 +19,7 @@ for i in range(0,checkpoints):
         # Net Distance = IntermediateDist[1-2] + IntermediateDist[2-3] - IntermediateDist[1-3]
         # Want to remove the checkpoint with the largest net distance 
 
-        dist = intermediateDist[i-1] + intermediateDist[i-2] + (abs(xCoordinate[i-2]-xCoordinate[i])+abs(yCoordinate[i-2]-yCoordinate[i]))
+        dist = intermediateDist[i-1] + intermediateDist[i-2] - (abs(xCoordinate[i-2]-xCoordinate[i])+abs(yCoordinate[i-2]-yCoordinate[i]))
         m = max(m,dist)
         if m == dist:
             index = i-1
